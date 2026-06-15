@@ -1,0 +1,314 @@
+
+
+:root {
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #2a8af633 0deg,
+    #a853ba33 180deg,
+    #e92a6733 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  --bg-color: #030014;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Geist', sans-serif;
+  background-color: var(--bg-color);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+/* Background Canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b2d71;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5b46a1;
+}
+
+/* Typography Utilities */
+.heading-gradient {
+  background: linear-gradient(to right, #b0f3f1, #ffcfdf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heading-primary {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(10, 10, 25, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Input Fields */
+.glass-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #8a2be2;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #9ca3af;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.glass-input:focus ~ .floating-label,
+.glass-input:not(:placeholder-shown) ~ .floating-label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: 0.75rem;
+  color: #b0f3f1;
+  background: var(--bg-color);
+  padding: 0 0.25rem;
+}
+
+/* Glow Effects */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: pulse 8s infinite alternate;
+}
+
+.orb-1 {
+  background: rgba(138, 43, 226, 0.3);
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 10%;
+}
+
+.orb-2 {
+  background: rgba(43, 138, 226, 0.3);
+  width: 500px;
+  height: 500px;
+  bottom: 20%;
+  right: 5%;
+  animation-delay: -4s;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+  100% { transform: scale(1.2) translate(20px, -20px); opacity: 0.6; }
+}
+
+/* CTA Buttons */
+.btn-primary {
+  background: linear-gradient(45deg, #8a2be2, #4b0082);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 0px 15px rgba(37, 211, 102, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+  animation: floatBtn 3s ease-in-out infinite, pulseGreen 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+@keyframes floatBtn {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Responsive map container */
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  border-radius: 1rem;
+}
+
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(120%);
+}
+
+/* Form success message */
+.form-success {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.form-success.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Advanced Image Hover Effects */
+.image-glow-wrapper {
+  position: relative;
+}
+.image-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #7C3AED, #06B6D4, #7C3AED);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  filter: blur(15px);
+}
+.image-glow-wrapper:hover::before {
+  opacity: 1;
+}
+
+/* Hero Floating Animation */
+@keyframes float-complex {
+  0% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+.animate-float {
+  animation: float-complex 8s ease-in-out infinite;
+}
+
+/* Image Grayscale to Color Transition */
+.image-bw-to-color {
+  filter: grayscale(100%) contrast(1.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.group:hover .image-bw-to-color,
+.image-bw-to-color:hover {
+  filter: grayscale(0%) contrast(1);
+}

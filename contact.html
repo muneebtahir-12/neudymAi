@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Internship Program | Shape the Future</title>
+    <meta name="description" content="Join our premium AI Internship Program to master Machine Learning, Deep Learning, and cutting-edge Future Technologies.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500&family=Geist+Mono&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131317",
+                        "surface-container-highest": "#353439",
+                        "primary-container": "#7c3aed",
+                        "text-secondary": "#94A3B8",
+                        "primary": "#d2bbff",
+                        "text-primary": "#F8FAFC",
+                        "secondary-container": "#03b5d3",
+                        "surface": "#131317",
+                        "glow-cyan": "rgba(6, 182, 212, 0.3)",
+                        "surface-container-low": "#1b1b1f",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "error-container": "#93000a",
+                        "surface-container": "#1f1f23",
+                        "on-tertiary-fixed-variant": "#454a00",
+                        "outline-variant": "#4a4455",
+                        "on-primary-fixed": "#25005a",
+                        "tertiary-container": "#656c00",
+                        "glow-violet": "rgba(124, 58, 237, 0.3)",
+                        "primary-fixed": "#eaddff",
+                        "on-surface-variant": "#ccc3d8",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "secondary": "#4cd7f6",
+                        "on-error": "#690005",
+                        "outline": "#958da1",
+                        "surface-tint": "#d2bbff",
+                        "on-tertiary-container": "#e3f120",
+                        "tertiary": "#c3d000",
+                        "surface-variant": "#353439",
+                        "surface-container-high": "#2a292e",
+                        "on-surface": "#e5e1e7",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#c3d000",
+                        "on-background": "#e5e1e7",
+                        "on-tertiary-fixed": "#1b1d00",
+                        "inverse-primary": "#732ee4",
+                        "secondary-fixed": "#acedff",
+                        "border-subtle": "rgba(255, 255, 255, 0.1)",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-bright": "#39393d",
+                        "surface-container-lowest": "#0e0e12",
+                        "inverse-on-surface": "#303034",
+                        "surface-card": "#111827",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-primary": "#3f008e",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3300",
+                        "background": "#131317",
+                        "on-primary-container": "#ede0ff",
+                        "inverse-surface": "#e5e1e7",
+                        "on-secondary": "#003640",
+                        "on-secondary-container": "#00424e",
+                        "tertiary-fixed": "#dfed1a",
+                        "brand-purple": "#8a2be2",
+                        "brand-blue": "#4b0082",
+                        "brand-cyan": "#b0f3f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Syne"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Syne"],
+                        "code-sm": ["Geist Mono"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-lg": ["Syne"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="antialiased text-white selection:bg-brand-purple selection:text-white">
+
+    <!-- Global Background Elements -->
+    <canvas id="particles-canvas"></canvas>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- Navbar -->
+   <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-glow-violet transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-text-primary tracking-tight hover:scale-105 transition-transform duration-200" href="#">
+                neudym.ai
+            </a>
+<div class="hidden md:flex gap-8 items-center font-body-md text-body-md font-medium">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="index.html">Home</a>
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="about.html">About</a>
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="services.html">Services</a>
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="contact.html">Contact</a>
+</div>
+
+</div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        
+        <!-- Hero Background Decor -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left Content -->
+                <div class="w-full lg:w-1/2 gs-hero-left relative z-20">
+                    <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/30 bg-primary/10 mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(124,58,237,0.15)]">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+                        </span>
+                        <span class="text-sm font-label-md text-primary tracking-widest uppercase">Registration Open 2026</span>
+                    </div>
+                    
+                    <h1 class="font-headline-xl text-headline-xl mb-6 text-text-primary">
+                        Shape the Future with <br/><span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Artificial Intelligence</span>
+                    </h1>
+                    
+                    <p class="font-body-lg text-body-lg text-text-secondary mb-10 max-w-[600px]">
+                        Join our exclusive AI Internship Program. Gain hands-on experience with state-of-the-art neural networks, machine learning models, and next-generation technologies. Build real-world solutions that matter.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="#apply" class="px-8 py-4 rounded-xl bg-primary text-on-primary font-label-md text-[16px] hover:bg-primary-fixed transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(210,187,255,0.4)] flex justify-center items-center gap-2 group">
+                            Apply Now
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#about" class="px-8 py-4 rounded-xl border border-outline-variant bg-surface/50 text-text-primary font-label-md text-[16px] hover:bg-surface-variant transition-all flex justify-center items-center">
+                            Explore Program
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="w-full lg:w-1/2 gs-hero-right relative flex justify-center items-center lg:justify-end">
+                    <div class="relative w-full aspect-[4/3] rounded-3xl animate-float image-glow-wrapper border border-white/10 p-2 bg-surface/50 backdrop-blur-sm group">
+                        <img src="images/ai_hero.png" alt="Futuristic AI Illustration" class="w-full h-full object-cover rounded-2xl image-bw-to-color">
+                        
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl flex items-center gap-4 z-20 border border-border-subtle shadow-2xl">
+                            <div class="bg-primary/20 p-3 rounded-xl">
+                                <i data-lucide="cpu" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-text-secondary uppercase tracking-wider font-label-md">Powered By</p>
+                                <p class="font-bold text-text-primary font-body-md">Next-Gen Tech</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -top-6 -right-6 glass-card p-4 rounded-2xl flex items-center gap-4 z-20 border border-border-subtle shadow-2xl">
+                            <div class="bg-secondary/20 p-3 rounded-xl">
+                                <i data-lucide="sparkles" class="text-secondary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-text-primary font-body-md">100% Practical</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- About Preview Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 gs-fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 heading-primary">Explore The <span class="heading-gradient">Program</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Dive deep into the core pillars of our intensive internship program designed to transform you into an industry-ready AI specialist.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 group gs-stagger-card relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="bot" class="w-8 h-8 text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Artificial Intelligence</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Master the fundamentals of AI, intelligent agents, and problem-solving techniques to build systems that mimic human cognition.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="glass-card p-8 group gs-stagger-card relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="network" class="w-8 h-8 text-brand-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Machine Learning</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Develop predictive models, understand algorithms, and work with massive datasets to train systems that learn and adapt.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="glass-card p-8 group gs-stagger-card relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-purple/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="rocket" class="w-8 h-8 text-[#e92a67]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Future Technologies</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Explore quantum computing intersections, edge AI, and cutting-edge innovations that are reshaping tomorrow's digital landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Application Form & Map Section -->
+    <section id="apply" class="py-24 relative z-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Left: Application Form -->
+                <div class="w-full lg:w-5/12 gs-form">
+                    <div class="mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 heading-primary">Ready to <span class="heading-gradient">Apply?</span></h2>
+                        <p class="text-gray-400">Secure your spot in the upcoming cohort. Spaces are strictly limited to ensure quality mentorship.</p>
+                    </div>
+                    
+                    <form id="applicationForm" class="glass-card p-8 relative">
+                        <div class="space-y-6">
+                            <!-- Full Name -->
+                            <div class="relative">
+                                <input type="text" id="fullName" class="glass-input w-full p-4 rounded-lg peer placeholder-transparent" placeholder="Full Name" required>
+                                <label for="fullName" class="floating-label peer-focus:text-brand-cyan">Full Name</label>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="relative">
+                                <input type="email" id="email" class="glass-input w-full p-4 rounded-lg peer placeholder-transparent" placeholder="Email Address" required>
+                                <label for="email" class="floating-label peer-focus:text-brand-cyan">Email Address</label>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="relative">
+                                <input type="tel" id="phone" class="glass-input w-full p-4 rounded-lg peer placeholder-transparent" placeholder="Phone Number" required>
+                                <label for="phone" class="floating-label peer-focus:text-brand-cyan">Phone Number</label>
+                            </div>
+                            
+                            <!-- Motivation -->
+                            <div class="relative">
+                                <textarea id="motivation" rows="4" class="glass-input w-full p-4 rounded-lg peer placeholder-transparent resize-none" placeholder="Motivation Message" required></textarea>
+                                <label for="motivation" class="floating-label peer-focus:text-brand-cyan">Why do you want to join?</label>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full py-4 rounded-lg font-bold text-lg flex justify-center items-center gap-2">
+                                Submit Application <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Success State Overlay -->
+                        <div id="formSuccess" class="form-success absolute inset-0 glass-card bg-[#030014]/90 z-10 flex-col items-center justify-center text-center p-8">
+                            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4 text-green-400">
+                                <i data-lucide="check-circle" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Application Received!</h3>
+                            <p class="text-gray-400 text-sm">Thank you for your interest. Our admissions team will review your profile and contact you shortly.</p>
+                            <button type="button" id="resetFormBtn" class="mt-6 text-brand-cyan text-sm font-medium hover:underline">Submit another application</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right: Map & Contact Info -->
+                <div class="w-full lg:w-7/12 flex flex-col gap-8 gs-map" id="contact">
+                    <!-- Contact Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="glass-card p-6 flex items-center gap-4">
+                            <div class="bg-brand-purple/20 p-3 rounded-lg text-brand-cyan">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Email Us</p>
+                                <p class="font-medium">internship@ai-program.com</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 flex items-center gap-4">
+                            <div class="bg-brand-purple/20 p-3 rounded-lg text-brand-cyan">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Call Us</p>
+                                <p class="font-medium">+92 300 1234567</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="glass-card p-2 flex-grow h-full min-h-[300px]">
+                        <div class="map-container h-full rounded-lg overflow-hidden">
+                            <!-- Generic map embed centered on a tech hub (e.g. San Francisco or user's requested region, using standard iframe) -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.29592731265!2d-77.4771327!3d39.0437567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64de500000001%3A0x6b6c167d3d19cc83!2sAshburn%2C%20VA!5e0!3m2!1sen!2sus!4v1716301234567!5m2!1sen!2sus" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-6 flex items-center gap-4">
+                         <div class="bg-brand-purple/20 p-3 rounded-lg text-brand-cyan">
+                                <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Headquarters</p>
+                            <p class="font-medium">Tech Hub Innovation Center, Ashburn, VA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-dim border-t border-outline-variant w-full py-16 mt-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex flex-col gap-6">
+                <div class="font-headline-md text-headline-md font-bold text-text-primary">neudym.ai</div>
+                <p class="text-text-secondary text-sm">The precision of engineering meets the creative potential of AI.</p>
+                <div class="flex gap-4">
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Company</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Resources</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">API Reference</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Community</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Contact</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">location_on</span> Rawalpindi, PK</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">mail</span> hello@neudym.ai</li>
+                    <li class="mt-8 text-[12px] opacity-60">© 2026 Neudym.ai. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

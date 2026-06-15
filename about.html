@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us | Neudym.ai</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500&family=Geist+Mono&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Using the identical tailwind config and styles from index.html -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131317",
+                        "surface-container-highest": "#353439",
+                        "primary-container": "#7c3aed",
+                        "text-secondary": "#94A3B8",
+                        "primary": "#d2bbff",
+                        "text-primary": "#F8FAFC",
+                        "secondary-container": "#03b5d3",
+                        "surface": "#131317",
+                        "glow-cyan": "rgba(6, 182, 212, 0.3)",
+                        "surface-container-low": "#1b1b1f",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "error-container": "#93000a",
+                        "surface-container": "#1f1f23",
+                        "on-tertiary-fixed-variant": "#454a00",
+                        "outline-variant": "#4a4455",
+                        "on-primary-fixed": "#25005a",
+                        "tertiary-container": "#656c00",
+                        "glow-violet": "rgba(124, 58, 237, 0.3)",
+                        "primary-fixed": "#eaddff",
+                        "on-surface-variant": "#ccc3d8",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "secondary": "#4cd7f6",
+                        "on-error": "#690005",
+                        "outline": "#958da1",
+                        "surface-tint": "#d2bbff",
+                        "on-tertiary-container": "#e3f120",
+                        "tertiary": "#c3d000",
+                        "surface-variant": "#353439",
+                        "surface-container-high": "#2a292e",
+                        "on-surface": "#e5e1e7",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#c3d000",
+                        "on-background": "#e5e1e7",
+                        "on-tertiary-fixed": "#1b1d00",
+                        "inverse-primary": "#732ee4",
+                        "secondary-fixed": "#acedff",
+                        "border-subtle": "rgba(255, 255, 255, 0.1)",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-bright": "#39393d",
+                        "surface-container-lowest": "#0e0e12",
+                        "inverse-on-surface": "#303034",
+                        "surface-card": "#111827",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-primary": "#3f008e",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3300",
+                        "background": "#131317",
+                        "on-primary-container": "#ede0ff",
+                        "inverse-surface": "#e5e1e7",
+                        "on-secondary": "#003640",
+                        "on-secondary-container": "#00424e",
+                        "tertiary-fixed": "#dfed1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Syne"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Syne"],
+                        "code-sm": ["Geist Mono"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg-mobile": ["Syne"],
+                        "headline-lg": ["Syne"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #d2bbff 0%, #4cd7f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Advanced Image Hover Effects */
+        .image-glow-wrapper {
+            position: relative;
+        }
+        .image-glow-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #7C3AED, #06B6D4, #7C3AED);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(15px);
+        }
+        .image-glow-wrapper:hover::before {
+            opacity: 1;
+        }
+        
+        /* Hero Floating Animation */
+        @keyframes float-complex {
+            0% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-15px) rotate(1deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float-complex 8s ease-in-out infinite;
+        }
+
+        /* Particles */
+        .particles-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-up linear infinite;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+        .video-gradient-overlay {
+            background: linear-gradient(to bottom, rgba(5, 5, 8, 0.8) 0%, rgba(124, 58, 237, 0.1) 50%, rgba(5, 5, 8, 0.95) 100%);
+        }
+        .hero-gradient-text {
+            background: linear-gradient(to right, #7C3AED, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Sticky Layout */
+        #features-section .feature-card {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        #features-section .feature-card.in-view {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        #features-section .feature-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        /* Image Grayscale to Color Transition */
+        .image-bw-to-color {
+            filter: grayscale(100%) contrast(1.1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .image-bw-to-color,
+        .image-bw-to-color:hover {
+            filter: grayscale(0%) contrast(1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-glow-violet transition-all duration-300 ease-in-out">
+        <div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+            <a class="font-headline-md text-headline-md font-bold text-text-primary tracking-tight hover:scale-105 transition-transform duration-200" href="index.html">
+                neudym.ai
+            </a>
+            <div class="hidden md:flex gap-8 items-center font-body-md text-body-md font-medium">
+                <a class="text-text-secondary hover:text-text-primary transition-colors" href="index.html">Home</a>
+                <a class="text-primary font-semibold transition-colors" href="about.html">About</a>
+                <a class="text-text-secondary hover:text-text-primary transition-colors" href="services.html">Services</a>
+                <a class="text-text-secondary hover:text-text-primary transition-colors" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Advanced Split Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center overflow-hidden pt-32 pb-24 border-b border-outline-variant/30">
+        <!-- Abstract Background Gradient -->
+        <div class="absolute inset-0 bg-surface-dim"></div>
+        <div class="absolute inset-0 video-gradient-overlay"></div>
+        <div class="absolute top-1/4 -left-1/4 w-[70%] h-[70%] rounded-full blur-[150px] bg-primary/10 pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[50%] h-[50%] rounded-full blur-[120px] bg-secondary/10 pointer-events-none"></div>
+
+        <div class="particles-container">
+            <div class="particle" style="left: 15%; animation-duration: 15s; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 35%; animation-duration: 20s; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 65%; animation-duration: 18s; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 85%; animation-duration: 22s; animation-delay: 8s;"></div>
+        </div>
+
+        <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="gs-hero-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 mb-6 text-primary font-code-sm uppercase tracking-widest">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Our Mission
+                </div>
+                <h1 class="font-headline-xl text-headline-xl mb-6 leading-tight">
+                    Engineering the <br/><span class="hero-gradient-text">Future of AI</span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-white/80 mb-8 text-xl leading-relaxed max-w-xl">
+                    We are committed to harnessing the power of AI to transform businesses and improve operational efficiency. Our team shares a passion for technology and innovation, striving to create custom solutions that meet the diverse needs of our clients.
+                </p>
+                <div class="flex gap-4">
+                    <button class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(124,58,237,0.4)]">
+                        Our Services
+                    </button>
+                    <button class="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/5 transition-all font-bold">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+
+            <!-- Image Container -->
+            <div class="gs-hero-right relative" id="about-hero-img-container">
+                <div class="relative w-full aspect-[4/3] rounded-3xl animate-float image-glow-wrapper border border-white/10 p-2 bg-surface/50 backdrop-blur-sm">
+                    <!-- PLACEHOLDER FOR HERO IMAGE -->
+                    <!-- USER INSTRUCTION: Replace 'images/about-hero.jpg' with your desired hero image -->
+                    <img src="images/team.jpg" alt="Neudym AI Team" class="w-full h-full object-cover rounded-2xl image-bw-to-color" onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop'" />
+                    
+                    <!-- Decorative elements over image -->
+                    <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary">model_training</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Advanced Models</p>
+                            <p class="text-xs text-secondary font-code-sm">Deployed globally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section with Advanced Image Hover -->
+    <section class="py-32 bg-surface overflow-hidden relative">
+        <div class="absolute top-1/2 right-0 w-[40%] h-[60%] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
+        
+        <div class="px-margin-desktop max-w-container-max mx-auto reveal-on-scroll">
+            <div class="text-center mb-20">
+                <span class="text-primary font-code-sm uppercase tracking-widest block mb-4">OUR LEADERSHIP</span>
+                <h2 class="font-headline-lg text-headline-lg mb-4">Guided by <span class="gradient-text">Visionaries</span></h2>
+            </div>
+            
+            <div class="flex justify-center">
+                <!-- Advanced Team Card -->
+                <div class="relative max-w-4xl w-full group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-[2rem] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                    
+                    <div class="relative glass-card rounded-[2rem] border border-white/10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+                        
+                        <!-- Team Image -->
+                        <!-- USER INSTRUCTION: Replace 'images/yasir-profile.jpg' with Yasir's actual photo -->
+                        <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden border-4 border-white/5 relative z-10 group-hover:border-primary/50 transition-colors duration-500 shadow-2xl">
+                            <img src="images/yasir-profile.jpg" alt="Dr. Yasir Awais Butt" class="w-full h-full object-cover image-bw-to-color scale-100 group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://media.licdn.com/dms/image/v2/C5103AQHYG6-h7F_ynw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517284059932?e=2147483647&v=beta&t=Jvxvg43JP3YUVgGDVYO5_Rcc9mqD-hwOuDTwVzD11uA'" />
+                        </div>
+                        
+                        <!-- Text Content -->
+                        <div class="relative z-10 text-center md:text-left">
+                            <h3 class="font-headline-md text-4xl font-bold mb-2 text-white">Dr. Yasir Awais Butt</h3>
+                            <div class="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-code-sm uppercase tracking-widest text-sm mb-6">
+                                Lead AI Engineer
+                            </div>
+                            <p class="text-text-secondary text-lg leading-relaxed mb-8 max-w-xl">
+                                Spearheading our mission to help organizations leverage the full potential of artificial intelligence through innovative technology and expert guidance. With deep expertise in machine learning architectures, Dr. Yasir ensures every solution is built for maximum scalability and precision.
+                            </p>
+                            <div class="flex items-center gap-4 justify-center md:justify-start">
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 hover:text-primary transition-all">
+                                    <span class="material-symbols-outlined text-sm">link</span>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 hover:text-primary transition-all">
+                                    <span class="material-symbols-outlined text-sm">mail</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery / Environment Section -->
+    <!-- USER INSTRUCTION: This section provides placeholders for your office or team pictures -->
+    <section class="py-24 bg-surface-dim border-t border-outline-variant/30 overflow-hidden">
+        <div class="px-margin-desktop max-w-container-max mx-auto mb-16 text-center reveal-on-scroll">
+            <h2 class="font-headline-lg text-headline-lg mb-4">Inside <span class="gradient-text">Neudym.ai</span></h2>
+            <p class="text-text-secondary text-lg">Our culture is driven by collaboration and relentless innovation.</p>
+        </div>
+        
+        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll delay-100">
+            <!-- Gallery Image 1 -->
+            <div class="rounded-2xl overflow-hidden aspect-square group image-glow-wrapper border border-white/10 relative">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="images/gallery-1.jpg" alt="Neudym Office" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 image-bw-to-color" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQodLSQboxbOjCGjF_wTYBvF0Y3Bu7lrFXSDwRkubXt6nTi_kmyQUgFX50&s=10'"/>
+            </div>
+            <!-- Gallery Image 2 -->
+            <div class="rounded-2xl overflow-hidden aspect-square md:aspect-[3/4] md:-translate-y-8 group image-glow-wrapper border border-white/10 relative">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="images/gallery-2.jpg" alt="Team Collaboration" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 image-bw-to-color" onerror="this.src='https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000&auto=format&fit=crop'"/>
+            </div>
+            <!-- Gallery Image 3 -->
+            <div class="rounded-2xl overflow-hidden aspect-square group image-glow-wrapper border border-white/10 relative">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="images/gallery-3.jpg" alt="AI Workspace" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 image-bw-to-color" onerror="this.src='https://static.vecteezy.com/system/resources/previews/036/022/655/large_2x/ai-generated-office-worker-doing-working-late-night-photo.jpg'"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Sticky Section with Integrated Image -->
+    <!-- USER INSTRUCTION: The background image for this section can be customized via the inline style or by replacing the URL below -->
+    <section class="py-32 overflow-hidden relative" id="features-section" style="background-image: url('https://images.unsplash.com/photo-1676643632321-72da9a11db69?q=80&w=2000&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-surface/85 backdrop-blur-sm"></div>
+        <div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row gap-12 lg:gap-20 relative">
+                
+                <!-- Left Column (Cards) -->
+                <div class="w-full md:w-[50%] flex flex-col relative md:pb-[20vh] z-20">
+                    <div class="mb-12 feature-header-animate opacity-0">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary/20 bg-secondary/10 mb-4 text-secondary font-code-sm uppercase tracking-widest">
+                            VALUE PROPOSITION
+                        </span>
+                        <h2 class="font-headline-lg text-headline-lg">Unique <span class="gradient-text">Key Features</span></h2>
+                    </div>
+
+                    <!-- Card 1 -->
+                    <div class="feature-card p-8 rounded-2xl flex items-start gap-6 relative w-full border border-white/5 hover:border-primary/50 transition-all duration-300 backdrop-blur-xl" style="position: sticky; top: 120px; z-index: 10; background-color: rgba(17,17,22,0.85); box-shadow: 0 -10px 40px -5px rgba(0,0,0,0.7);">
+                        <div class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-md text-2xl font-bold mb-3">Innovative Solutions</h3>
+                            <p class="text-text-secondary text-[16px] leading-relaxed">Dedicated to providing groundbreaking AI solutions tailored to enhance your business capabilities and empower success.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="feature-card p-8 rounded-2xl flex items-start gap-6 relative w-full border border-white/5 hover:border-secondary/50 transition-all duration-300 backdrop-blur-xl" style="position: sticky; top: 140px; z-index: 20; background-color: rgba(17,17,22,0.85); box-shadow: 0 -10px 40px -5px rgba(0,0,0,0.7);">
+                        <div class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center bg-secondary/10 text-secondary">
+                            <span class="material-symbols-outlined">trending_up</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-md text-2xl font-bold mb-3">Effortless Scalability</h3>
+                            <p class="text-text-secondary text-[16px] leading-relaxed">Built to scale effortlessly with your business growth, ensuring you never miss out on critical expansion opportunities.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="feature-card p-8 rounded-2xl flex items-start gap-6 relative w-full border border-white/5 hover:border-tertiary/50 transition-all duration-300 backdrop-blur-xl" style="position: sticky; top: 160px; z-index: 30; background-color: rgba(17,17,22,0.85); box-shadow: 0 -10px 40px -5px rgba(0,0,0,0.7);">
+                        <div class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center bg-tertiary/10 text-tertiary">
+                            <span class="material-symbols-outlined">settings_suggest</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-md text-2xl font-bold mb-3">Flexible Deployment</h3>
+                            <p class="text-text-secondary text-[16px] leading-relaxed">Enjoy flexibility in deployment architectures, allowing rapid adaptation to changing infrastructure and privacy needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Sticky Text Panel - Our Mission) -->
+                <div class="w-full md:w-[50%] relative mt-8 md:mt-0 z-10 flex items-center">
+                    <div class="md:sticky md:top-[30%] w-full">
+                        <div class="glass-card rounded-3xl p-10 border border-white/20 shadow-2xl backdrop-blur-2xl bg-black/60 hover:border-primary/50 transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden group">
+                            <!-- Background Image for Card -->
+                            <div class="absolute inset-0 bg-[url('images/mission.png')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                            
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30 backdrop-blur-md">
+                                    <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                                </div>
+                                <h3 class="font-headline-md text-4xl font-bold mb-4 text-white drop-shadow-lg">Our Mission</h3>
+                                <p class="text-white/90 text-lg leading-relaxed drop-shadow-md">
+                                    To help organizations leverage the full potential of artificial intelligence through innovative technology and expert guidance, setting ourselves apart by delivering unmatched value.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics Section -->
+    <section class="py-24 bg-surface-dim overflow-hidden border-t border-outline-variant/30 reveal-on-scroll">
+        <div class="px-margin-desktop max-w-container-max mx-auto text-center">
+            <h2 class="font-headline-lg text-headline-lg mb-6">Our <span class="text-primary">Key Metrics</span></h2>
+            <p class="text-body-lg text-text-secondary mb-16 max-w-2xl mx-auto leading-relaxed">
+                Explore our statistics that reflect our success and impact in the AI development field, highlighting our journey and growth.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+                <div class="glass-card p-10 rounded-xl text-center group border border-white/5 hover:border-primary/30 transition-colors">
+                    <div class="font-headline-xl text-[56px] text-primary mb-2 stat-counter" data-target="150">0</div>
+                    <div class="font-code-sm text-text-secondary uppercase tracking-widest text-[12px]">Clients Served</div>
+                </div>
+                <div class="glass-card p-10 rounded-xl text-center group border border-white/5 hover:border-secondary/30 transition-colors">
+                    <div class="font-headline-xl text-[56px] text-secondary mb-2 stat-counter" data-target="98">0</div>
+                    <div class="font-code-sm text-text-secondary uppercase tracking-widest text-[12px]">% Satisfaction</div>
+                </div>
+                <div class="glass-card p-10 rounded-xl text-center group border border-white/5 hover:border-tertiary/30 transition-colors">
+                    <div class="font-headline-xl text-[56px] text-tertiary mb-2 stat-counter" data-target="45">0</div>
+                    <div class="font-code-sm text-text-secondary uppercase tracking-widest text-[12px]">AI Models Deployed</div>
+                </div>
+                <div class="glass-card p-10 rounded-xl text-center group border border-white/5 hover:border-primary-fixed/30 transition-colors">
+                    <div class="font-headline-xl text-[56px] text-primary-fixed mb-2 stat-counter" data-target="10">0</div>
+                    <div class="font-code-sm text-text-secondary uppercase tracking-widest text-[12px]">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-outline-variant w-full py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+            <div class="flex flex-col gap-6">
+                <div class="font-headline-md text-headline-md font-bold text-text-primary">neudym.ai</div>
+                <p class="text-text-secondary text-sm">The precision of engineering meets the creative potential of AI.</p>
+                <div class="flex gap-4">
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+                    <a class="text-text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Company</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Resources</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">API Reference</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Community</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-6">Contact</h4>
+                <ul class="space-y-3 text-text-secondary text-sm">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">location_on</span> Rawalpindi, PK</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">mail</span> hello@neudym.ai</li>
+                    <li class="mt-8 text-[12px] opacity-60">© 2026 neudym.ai. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Trigger counters if this is the stats section
+                    const counters = entry.target.querySelectorAll('.stat-counter');
+                    if (counters.length > 0) {
+                        counters.forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-target'));
+                            let current = 0;
+                            const duration = 2000;
+                            const stepTime = 20;
+                            const steps = duration / stepTime;
+                            const increment = target / steps;
+                            
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.textContent = target + (counter.getAttribute('data-target') === '98' ? '%' : '+');
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = Math.floor(current);
+                                }
+                            }, stepTime);
+                            // Prevent re-triggering
+                            counter.classList.remove('stat-counter');
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16', 'bg-surface/95');
+                nav.classList.remove('h-20', 'bg-surface/80');
+            } else {
+                nav.classList.remove('h-16', 'bg-surface/95');
+                nav.classList.add('h-20', 'bg-surface/80');
+            }
+        });
+
+        // Features Custom Observer
+        const featuresObserverOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -100px 0px"
+        };
+        const featuresObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, featuresObserverOptions);
+        document.querySelectorAll('.feature-card, .feature-header-animate').forEach(el => featuresObserver.observe(el));
+    </script>
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
